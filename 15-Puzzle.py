@@ -13,7 +13,7 @@ loc = [[[10,10,90,90],[110,10,90,90],[210,10,90,90],[310,10,90,90]],
        [[10,210,90,90],[110,210,90,90],[210,210,90,90],[310,210,90,90]],
        [[10,310,90,90],[110,310,90,90],[210,310,90,90],[310,310,90,90]]]
 
-nums = [1,0,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+nums = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,15,14]
 random.shuffle(nums)
 map = [[0,0,0,0],
        [0,0,0,0],
@@ -28,7 +28,7 @@ for i in range(4):
 
 
 def block(i,j,n):
-    if n!=0:
+    if n!=15:
         moraba = pygame.Rect(loc[i][j][0],loc[i][j][1],loc[i][j][2],loc[i][j][3]) # [i][j][0] = x [i][j][1] = y
         pygame.draw.rect(win , "white" , moraba)
 
@@ -61,7 +61,7 @@ def main():
         zero_i, zero_j = 0, 0
         for i in range(4):
             for j in range(4):
-                if map[i][j]==0:
+                if map[i][j]==15:
                     zero_i = i
                     zero_j = j
                     #print(i,j)
