@@ -14,7 +14,7 @@ loc = [[[10,10,90,90],[110,10,90,90],[210,10,90,90],[310,10,90,90]],
        [[10,310,90,90],[110,310,90,90],[210,310,90,90],[310,310,90,90]]]
 
 nums = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,15,14]
-random.shuffle(nums)
+#random.shuffle(nums)
 map = [[0,0,0,0],
        [0,0,0,0],
        [0,0,0,0],
@@ -56,7 +56,7 @@ def main():
             for j in range(4):
                 block(i,j,map[i][j])
 
-        pygame.display.update()
+        #pygame.display.update()
 
         zero_i, zero_j = 0, 0
         for i in range(4):
@@ -104,14 +104,19 @@ def main():
                     f+=1
                 c+=1
         if f == 0:
-            print('HOLY SHIT YOU DID IT!')
-            run = False
+            #run = False
             winner = True
+
+        if(winner):
+            pygame.font.init() 
+            my_font = pygame.font.SysFont('Comic Sans MS', 30)
+            text_surface = my_font.render("HOLY SHIT YOU DID IT!", 1, (90, 255, 70))
+            win.blit(text_surface, (20,180))
+        
+        pygame.display.update()
 
     pygame.quit()
 
-    while winner:
-        print('HOLY SHIT YOU DID IT!')
 
 if __name__ == "__main__":
     main()
